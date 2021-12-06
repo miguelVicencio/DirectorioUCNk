@@ -17,9 +17,25 @@ android {
     }
 
     buildTypes {
+        //modo: produccion
         release {
-            minifyEnabled false
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            zipAnignEnabled true
+            crunchPng true
+            VersionNameSuffix ".d"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        //modo: desarrollo
+        debug{
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            zipAnignEnabled false
+            crunchPng false
+            VersionNameSuffix ".r"
+
         }
     }
     compileOptions {
